@@ -6,6 +6,13 @@
 			"Pong!",
 			"Plink!"
 		],
+		
+		"rps_countdown": "Rock... paper... scissors...",
+		"rps_lose": "Haha, I beat you; my {0} beats your {1}.",
+		"rps_win": "Darn, you got me there; your {1} beats my {0}.",
+		"rps_tie": "Oh, we both chose {}! We should try this again.",
+		"rps_move_invalid": "You must choose a valid move! Your choices are {}.",
+		"rps_move_unspecified": "You need to specify the move you would like to make.",
 
 		"page_counter": "(page {} of {})",
 		"page_number_not_integer": "Page numbers must be integers.",

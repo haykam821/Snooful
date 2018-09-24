@@ -28,21 +28,21 @@ module.exports = {
 			});
 
 			if (yourChoice === null) {
-				args.send(`You must choose a valid move! Your choices are ${choices.join(", ")}.`);
+				args.send(args.localize("rps_move_invalid", choices.join(", ")));
 			} else {
-				const msg = "Rock... paper... scissors...\n\n";
+				const msg = args.localize("rps_countdown") + "\n\n";
 				const myChoice = chance.pickone(choices);
 
 				if (myChoice === yourChoice) {
-					args.send(msg + `Oh, we both chose ${myChoice}! We should try this again.`);
+					args.send(msg + args.localize("rps_tie", myChoice, yourChoice));
 				} else if (beats[myChoice] === args.option) {
-					args.send(msg + `Haha, I beat you; my ${myChoice} beats your ${yourChoice}.`);
+					args.send(msg + args.localize("rps_lose", myChoice, yourChoice));
 				} else {
-					args.send(msg + `Darn, you got me there; your ${yourChoice} beats my ${myChoice}.`);
+					args.send(msg + args.localize("rps_win", myChoice, yourChoice));
 				}
 			}
 		} else {
-			args.send("You need to specify the move you would like to make.");
+			args.send(args.localize("rps_move_unspecified"));
 		}
 	},
 };
